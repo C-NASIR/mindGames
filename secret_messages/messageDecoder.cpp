@@ -9,7 +9,7 @@ char getLetter(int number, int mode = 0) {
   return (initial + value);
 }
 
-char getPunc(int number) {
+char getPunctuation(int number) {
   int place = number % 9;
   if (place > 8) return 0;
   char chars[] = {'!', '?', ',', '.', ' ', ';', '"','\''};
@@ -26,7 +26,7 @@ int getCorrectMode(int mode,int number) {
 }
 
 string addLetterToWord(string word, int number, int mode) {
-  if(mode == 2) word += getPunc(number);
+  if(mode == 2) word += getPunctuation(number);
   else word += getLetter(number,mode);
   return word;
 }
