@@ -56,7 +56,7 @@ string decodeSecretMessage(){
 
   while(digit != 10) {
     int value = digit - '0';
-    if(digit == 44) {
+    if(digit == ',') {
       int oldMode = mode;
       mode = getCorrectMode(mode, number); 
       if(mode != oldMode) { digit = cin.get(); number = 0; continue;}
