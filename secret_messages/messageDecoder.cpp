@@ -16,21 +16,6 @@ char getPunc(int number) {
   return chars[place - 1];
 }
 
-int getNumber() {
-  int number;
-  char digit;
-  digit = cin.get();
-
-  while (digit != ',') {
-    int numeral = digit - '0';
-    if(number == 0) number += numeral;
-    else number = (number * 10) + numeral;
-    digit = cin.get();
-  }
-  return number;
-}
-
-
 bool shouldModeChange(int mode, int number) {
   return number % (mode == 2 ? 9 : 27) == 0;
 }
