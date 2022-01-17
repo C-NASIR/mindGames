@@ -25,7 +25,7 @@ int getCorrectMode(int mode,int number) {
   return mode == 0 ? 1 : mode == 1 ? 2 : 0;
 }
 
-string addLetterToWord(string word, int number, int mode) {
+string getAppandedWord(string word, int number, int mode) {
   if(mode == 2) word += getPunctuation(number);
   else word += getLetter(number,mode);
   return word;
@@ -46,7 +46,7 @@ string decodeSecretMessage(){
       mode = getCorrectMode(mode, number); 
       if(mode != oldMode) { digit = cin.get(); number = 0; continue;}
 
-      word = addLetterToWord(word, number, mode);
+      word = getAppandedWord(word, number, mode);
       number = 0; digit = cin.get(); 
     } 
     else {
@@ -55,7 +55,7 @@ string decodeSecretMessage(){
       digit = cin.get(); 
     }
   }
-  return  addLetterToWord(word, number, mode);
+  return  getAppandedWord(word, number, mode);
 }
 
 int main() {
